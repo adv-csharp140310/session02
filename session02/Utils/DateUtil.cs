@@ -100,4 +100,62 @@ public static class DateUtil
 
         return monthNames[month - 1];
     }
+
+    public static string GetJalaliSeason(DateTime date)
+    {
+        //if/switch/pattern matching
+        var pc = new PersianCalendar();
+        var month = pc.GetMonth(date);
+
+        var result = "زمستان";
+        //switch (month)
+        //{
+        //    case 1:
+        //    case 2:
+        //    case 3:
+        //        return "بهار";
+        //    case 4:
+        //    case 5:
+        //    case 6:
+        //        return "زمستان";
+        //    case 7:
+        //    case 8:
+        //    case 9:
+        //        return "پاییز";
+        //    case 10:
+        //    case 11:
+        //    case 12:
+        //        return "زمستان";
+        //}
+
+        //switch (month)
+        //{
+        //    case 1 or 2 or 3:      
+        //        return "بهار";
+        //    case 4:
+        //    case 5:
+        //    case 6:
+        //        return "تابستان";
+        //    case 7:
+        //    case 8:
+        //    case 9:
+        //        return "پاییز";
+        //    default:
+        //        return "زمستان";
+        //}
+
+
+        return month switch
+        {
+            var m when m <= 3 => "بهار",
+            4 or 5 or 6 => "تابستان",
+            7 or 8 or 9 => "پاییز",
+            _ => "زمستان",
+        };
+
+
+
+
+        return result;
+    }
 }
