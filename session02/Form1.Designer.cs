@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            buttonMiladiToJalali = new Button();
+            SuspendLayout();
+            // 
+            // buttonMiladiToJalali
+            // 
+            buttonMiladiToJalali.Location = new Point(12, 12);
+            buttonMiladiToJalali.Name = "buttonMiladiToJalali";
+            buttonMiladiToJalali.Size = new Size(179, 23);
+            buttonMiladiToJalali.TabIndex = 0;
+            buttonMiladiToJalali.Text = "Miladi to jalali";
+            buttonMiladiToJalali.UseVisualStyleBackColor = true;
+            buttonMiladiToJalali.Click += buttonMiladiToJalali_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(buttonMiladiToJalali);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button buttonMiladiToJalali;
     }
 }
