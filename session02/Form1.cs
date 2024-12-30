@@ -1,3 +1,4 @@
+using MD.PersianDateTime;
 using session02.Utils;
 
 namespace session02
@@ -11,6 +12,9 @@ namespace session02
 
         private void buttonMiladiToJalali_Click(object sender, EventArgs e)
         {
+            var persianDateTime = new PersianDateTime(DateTime.Now);
+            PersianDateTime.Parse(persianDateTime.ToString());
+
             MessageBox.Show(DateUtil.MiladiToJalali(DateTime.Now));
         }
 
