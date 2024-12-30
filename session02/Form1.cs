@@ -15,7 +15,8 @@ namespace session02
             var persianDateTime = new PersianDateTime(DateTime.Now);
             PersianDateTime.Parse(persianDateTime.ToString());
 
-            MessageBox.Show(DateUtil.MiladiToJalali(DateTime.Now));
+            //MessageBox.Show(DateUtil.MiladiToJalali(DateTime.Now));
+            MessageBox.Show(DateTime.Now.ToJalali());            
         }
 
         private void buttonJalaliMonth_Click(object sender, EventArgs e)

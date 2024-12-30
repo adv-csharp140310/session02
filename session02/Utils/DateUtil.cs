@@ -4,6 +4,7 @@ using System.Text;
 namespace session02.Utils;
 public static class DateUtil
 {
+    
     static List<string> monthNames = new List<string>() {
                 "فروردین", "اردیبهشت", "خرداد",
                 "تیر", "مرداد",  "شهریور",
@@ -51,6 +52,14 @@ public static class DateUtil
         return result; 
     }
 
+    //DateTime 
+    //Extention Method (static)
+    public static string ToJalali(this DateTime date, string sep = "/")
+    {
+        return MiladiToJalali(date, sep);
+    }
+
+    
     public static string GetJalaliMonthName(DateTime date)
     {
         //if/switch/array
