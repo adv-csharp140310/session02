@@ -11,6 +11,15 @@ public static class DateUtil
                 "دی", "بهمن", "اسفند"
             };
 
+    /// <summary>
+    /// تبدل تاریخ میلادی به جلالی
+    /// </summary>
+    /// <param name="date">تاریخ</param>
+    /// <param name="sep">چدا کننده - به صورت دیفالت  / </param>
+    /// <example>
+    /// MiladiToJalali(DateTime.Now);
+    /// </example>
+    /// <returns></returns>
     public static string MiladiToJalali(DateTime date, string sep = "/")
     {
         //DRY - Don't Repeat Yourself 
