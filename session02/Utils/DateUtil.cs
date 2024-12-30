@@ -167,7 +167,13 @@ public static class DateUtil
         var month = int.Parse(parts[1]);
         var day = Convert.ToInt32(parts[2]);
 
-        var result = new DateTime(year, month, day, new PersianCalendar());
-        return result;
+
+        var parts2 = date.Split('/').Select(x => Convert.ToInt32(x)).ToList(); //["1403", "10", "10"] -> [1403, 10, 10] 
+        var parts3 = date.Split('/').Select(int.Parse).ToList(); //["1403", "10", "10"] -> [1403, 10, 10] 
+        year = parts2[0];
+        month = parts2[1];
+        day = parts2[2];
+
+        return new DateTime(year, month, day, new PersianCalendar());
     }
 }
