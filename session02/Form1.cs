@@ -23,6 +23,12 @@ namespace session02
         {
             MessageBox.Show(DateUtil.GetJalaliSeason(DateTime.Now));
         }
+
+        private void buttonJalaliToMiladi_Click(object sender, EventArgs e)
+        {
+            string date = DateUtil.MiladiToJalali(DateTime.Now);
+            MessageBox.Show(DateUtil.JalaliToMiladi(date).ToLongDateString());
+        }
     }
     /*
      * class static

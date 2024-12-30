@@ -159,5 +159,15 @@ public static class DateUtil
         return result;
     }
 
+    public static DateTime JalaliToMiladi(string date)
+    {
+        //1403/10/10       
+        var parts = date.Split('/'); //["1403", "10", "10"]
+        var year = Convert.ToInt32(parts[0]);
+        var month = int.Parse(parts[1]);
+        var day = Convert.ToInt32(parts[2]);
 
+        var result = new DateTime(year, month, day, new PersianCalendar());
+        return result;
+    }
 }

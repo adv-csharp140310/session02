@@ -31,6 +31,7 @@
             buttonMiladiToJalali = new Button();
             buttonJalaliMonth = new Button();
             buttonJalaliSeason = new Button();
+            buttonJalaliToMiladi = new Button();
             SuspendLayout();
             // 
             // buttonMiladiToJalali
@@ -63,11 +64,22 @@
             buttonJalaliSeason.UseVisualStyleBackColor = true;
             buttonJalaliSeason.Click += buttonJalaliSeason_Click;
             // 
+            // buttonJalaliToMiladi
+            // 
+            buttonJalaliToMiladi.Location = new Point(12, 99);
+            buttonJalaliToMiladi.Name = "buttonJalaliToMiladi";
+            buttonJalaliToMiladi.Size = new Size(179, 23);
+            buttonJalaliToMiladi.TabIndex = 3;
+            buttonJalaliToMiladi.Text = "Jalali to Miladi";
+            buttonJalaliToMiladi.UseVisualStyleBackColor = true;
+            buttonJalaliToMiladi.Click += buttonJalaliToMiladi_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonJalaliToMiladi);
             Controls.Add(buttonJalaliSeason);
             Controls.Add(buttonJalaliMonth);
             Controls.Add(buttonMiladiToJalali);
@@ -81,5 +93,6 @@
         private Button buttonMiladiToJalali;
         private Button buttonJalaliMonth;
         private Button buttonJalaliSeason;
+        private Button buttonJalaliToMiladi;
     }
 }
