@@ -11,7 +11,7 @@ public static class DateUtil
                 "دی", "بهمن", "اسفند"
             };
 
-    public static string MiladiToJalali(DateTime date)
+    public static string MiladiToJalali(DateTime date, string sep = "/")
     {
         //DRY - Don't Repeat Yourself 
 
@@ -21,20 +21,20 @@ public static class DateUtil
         var day = pc.GetDayOfMonth(date).ToString("0#");
 
         //String concat 
-        var result = year + "/" + month + "/" + day;
+        var result = year + sep + month + sep + day;
 
         //String format
-        result = String.Format("{0}/{1}/{2}", year, month, day);
+        result = String.Format("{0}{3}{1}{3}{2}", year, month, day, sep);
 
         //String template / string interpolation
-        result = $"{year}/{month}/{day}";
+        result = $"{year}{sep}{month}{sep}{day}";
 
 
         var sb = new StringBuilder();
         sb.Append(year);
-        sb.Append("/");
+        sb.Append(sep);
         sb.Append(month);
-        sb.Append("/");
+        sb.Append(sep);
         sb.Append(day);
         result = sb.ToString();
 
@@ -159,17 +159,18 @@ public static class DateUtil
         return result;
     }
 
-    public static DateTime JalaliToMiladi(string date)
+    public static DateTime JalaliToMiladi(string date, string sep = "/")
     {
         //1403/10/10       
-        var parts = date.Split('/'); //["1403", "10", "10"]
+        //1403-10-10       
+        var parts = date.Split(sep); //["1403", "10", "10"]
         var year = Convert.ToInt32(parts[0]);
         var month = int.Parse(parts[1]);
         var day = Convert.ToInt32(parts[2]);
 
 
-        var parts2 = date.Split('/').Select(x => Convert.ToInt32(x)).ToList(); //["1403", "10", "10"] -> [1403, 10, 10] 
-        var parts3 = date.Split('/').Select(int.Parse).ToList(); //["1403", "10", "10"] -> [1403, 10, 10] 
+        var parts2 = date.Split(sep).Select(x => Convert.ToInt32(x)).ToList(); //["1403", "10", "10"] -> [1403, 10, 10] 
+        var parts3 = date.Split(sep).Select(int.Parse).ToList(); //["1403", "10", "10"] -> [1403, 10, 10] 
         year = parts2[0];
         month = parts2[1];
         day = parts2[2];
